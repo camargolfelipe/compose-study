@@ -1,27 +1,64 @@
-# Compiled class file
+# Build
+/build/
+/app/build/
+/.gradle/
+/out/
+
+# IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+*.sw?
+
+# Android
+*.apk
+*.ap_
+*.dex
 *.class
-
-# Log file
-*.log
-
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
 *.jar
 *.war
-*.nar
 *.ear
+*.so
+*.o
+*.obj
+*.hprof
+*.keystore
+*.jks
+.cxx/
+local.properties
+
+# Kotlin/Java
+*.log
+*.ctxt
+*.kotlin/
+*.nar
 *.zip
 *.tar.gz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+# Testes e relatórios
+/test-output/
+*.ec
+*.coverage
+
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+gradle-app.setting
+
+# Configurações do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Outros
 hs_err_pid*
 replay_pid*
+*.tmp
+*.temp
+*.orig
+*.bak
 
-# Kotlin Gradle plugin data, see https://kotlinlang.org/docs/whatsnew20.html#new-directory-for-kotlin-data-in-gradle-projects
-.kotlin/
+# Arquivos de cache do Compose
+.compose-cache/
