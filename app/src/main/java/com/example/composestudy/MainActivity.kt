@@ -3,33 +3,10 @@ package com.example.composestudy
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.offset
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.tooling.preview.datasource.LoremIpsum
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
+import com.example.composestudy.sample.sampleSections
+import com.example.composestudy.ui.screens.HomeScreen
 import com.example.composestudy.ui.theme.ComposeStudyTheme
 
 
@@ -37,53 +14,19 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ComposeStudyTheme {
-                Surface {
-                    ProductItem()
-                }
-            }
+            App()
         }
     }
 }
 
-@Preview(showBackground = true)
 @Composable
-fun ProductItem() {
-    Column(
-        Modifier
-            .height(250.dp)
-            .width(200.dp)
-    ) {
-        Box(
-            Modifier
-                .height(100.dp)
-                .fillMaxWidth()
-                .background(brush = Brush.horizontalGradient(listOf(Color.Red, Color.Yellow)))
-        ) {
-            Image(
-                painterResource(id = R.drawable.ic_launcher_background),
-                contentDescription = null,
-                modifier = Modifier
-                    .size(100.dp)
-                    .offset(y = 50.dp)
-                    .clip(shape = CircleShape)
-                    .align(Alignment.BottomCenter)
-            )
-        }
-        Spacer(Modifier.height(50.dp))
-        Column(Modifier.padding(16.dp)) {
-            Text(
-                LoremIpsum(50).values.first(),
-                fontSize = 20.sp,
-                fontWeight = FontWeight(700),
-                maxLines = 2,
-                overflow = TextOverflow.Ellipsis
-            )
-            Text(
-                "R$ 14,99",
-                fontSize = 14.sp,
-                fontWeight = FontWeight(400),
+fun App() {
+    ComposeStudyTheme {
+        Surface {
+            HomeScreen(
+                sampleSections
             )
         }
     }
 }
+
